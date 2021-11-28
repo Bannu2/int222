@@ -1,0 +1,31 @@
+<%- include ('./header') %>
+<h1><%=message%></h1>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Login</h1>
+        <div style="width:30%;margin:20px auto">
+            <form action="/login" method="Post">
+                <div class="form-group">
+                    <input class="form-control" name="username" type ="text" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="password" type ="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-large btn-primary btn-block">Login</button>
+                </div>
+
+
+            </form>
+
+            <div style="margin-left:0%">
+           <center> <a  href="/mobiles">Go Back</a></center>
+            <!-- <br> -->
+            <center><span style="margin-left: 0%" >New User - </span><a style="margin-left:2px" href="/register">Signup</a></center>
+        </div>
+    </div>
+
+    </div>
+</div>
+<%- include ('./footer') %>

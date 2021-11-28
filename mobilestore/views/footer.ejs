@@ -1,0 +1,24 @@
+<!--<p>Trademark @2017</p>-->
+
+<nav style="position:fixed;right:-3px;top:-3px;left:-3px;color: black;" class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class=" navbar-header">
+            <a class="navbar-brand" href="/">Mobile Store</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <%if(!currentUser){%>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Signup</a></li>
+                <%}else {%>
+                <li><a>Signed in as  <%=currentUser.username%></span></a></li>
+                <li><a href="/logout">Logout</a></li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+</body>
+</html>
