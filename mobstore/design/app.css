@@ -1,0 +1,18 @@
+h1{
+    color:#1b1b1b;
+}
+.ab:hover{
+    background-color: white;
+
+}
+
+.flex-wrap {
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail .caption-full {
+    padding: 9px;
+}
+/* .container .text-muted {
+    margin: 20px 0;
+  } */

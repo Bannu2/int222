@@ -1,0 +1,81 @@
+<%- include ('./header') %>
+<a href="/mobiles" class="btn btn-primary" style="padding: 6px ; margin: 3px;">Back to Store</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead"><br><b>Mobile Store</b></p>
+            <div class="list-group">
+            <li class="list-group-item "style=" background-color:steelblue;color:white">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+
+                <li class="list-group-item">Info 3</li>
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="image-responsive" src="<%=mobile.image%>">
+
+
+
+                <div class="caption-full">
+                    <h3><a><%=mobile.name%></a></h3>
+                    <p><%=mobile.description%></p>
+                    <p><em>Submitted by-<b><%=mobile.author.username%></b></em></p>
+                   <% if(currentUser&& mobile.author.username==currentUser.username){%>
+                    <a class="btn btn-warning" href="/mobiles/<%=mobile._id%>/edit">Edit</a>
+
+                    <form style="display:inline" action="/mobiles/<%=mobile._id%>/delete?_method=DELETE" method="Post">
+                        <button  class="btn btn-danger">Delete This Phone</button>
+                    </form>
+                    <%}%>
+
+                </div>
+            </div>
+            <div class="well">
+                <h3>Comments</h3>
+
+
+                <div class="text-right">
+                    <a style="margin-top: -50px" class="btn btn-success" href="/mobiles/<%=mobile._id%>/comments/new">Add New Comment</a>
+
+                </div>
+
+
+                <% mobile.comments.forEach(function(comment){%>
+                <div style="margin-top: 10px" class="row">
+               <div class="col-md-12">
+
+                    <!-- <span class="pull-right">10 days ago</span> -->
+                   <p>
+                       <%=comment.text%>
+                   <br>
+                   <b>Commented by-<%=comment.author.username%></b>
+                </p>
+                   <% if(currentUser&& comment.author.username==currentUser.username){%>
+                   <a class="btn btn-warning" href="/mobiles/<%=mobile._id%>/comments/<%=comment._id%>/edit">Edit</a>
+              <form  style="display: inline" action="/mobiles/<%=mobile._id%>/comments/<%=comment._id%>/delete" method="post">
+                  <button class="btn btn-danger">Delete</button>
+
+              </form>
+                   <%}%>
+               </div>
+               </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div style="margin-left: 5px">
+
+
+
+</div>
+
